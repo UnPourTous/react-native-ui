@@ -1,0 +1,45 @@
+{
+  "name": "lib-wrapper",
+  "version": "1.0.1",
+  "description": "lib wrapper",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "compare-versions": "^3.0.1",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-jsx": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^2.3.1",
+    "gulp": "^3.9.1",
+    "gulp-install": "^1.1.0",
+    "gulp-shell": "^0.6.3",
+    "node-version-compare": "^1.0.1",
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnPourTous/rn-seed.git"
+  },
+  "author": "erichua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UnPourTous/rn-seed/issues"
+  },
+  "homepage": "https://github.com/UnPourTous/rn-seed#readme",
+  "envVersion": {
+    "nodejs": {
+      "min": "4.0.0"
+    },
+    "git": {
+      "min": "2.9.0"
+    }
+  }
+}
