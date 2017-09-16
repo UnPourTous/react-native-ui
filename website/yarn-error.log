@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/erichua/.nvm/versions/node/v4.3.0/bin/node /Users/erichua/.nvm/versions/node/v4.3.0/bin/yarn
+  /Users/erichua/.nvm/versions/node/v4.3.0/bin/node /Users/erichua/.nvm/versions/node/v4.3.0/bin/yarn add react-navigation
 
 PATH: 
   /Users/erichua/.nvm/versions/node/v4.3.0/bin:/Applications/AndroidSdkForAS/platform-tools/:/Applications/AndroidSdkForAS/tools/:/Users/erichua/.rvm/gems/ruby-2.1.0/bin:/Users/erichua/.rvm/gems/ruby-2.1.0@global/bin:/Users/erichua/.rvm/rubies/ruby-2.1.0/bin:/Applications/gradle-1.12/bin:/usr/local/Cellar/ant/1.9.3/bin:/Users/erichua/Documents/workspace/cocos2d-x-3.0rc0/tools/cocos2d-console/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/erichua/bin:/Users/erichua/bin/dex2jar-0.0.9.15/:/Users/erichua/bin/apktool1.5.2/:/Users/erichua/bin/apktool-install-macosx-r05-ibot/:/usr/local/bin:/Users/erichua/anaconda/bin:/Users/erichua/Documents/program/adt-bundle-mac-x86_64-20130729/sdk/tools:/Applications/android-ndk-r9c:/opt/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/erichua/Documents/program/adt-bundle-mac-x86_64-20130729/sdk/platform-tools:/Users/erichua/.rvm/bin:/Users/erichua/.vimpkg/bin:/usr/local/opt/fzf/bin
