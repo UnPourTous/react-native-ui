@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/erichua/.nvm/versions/node/v4.3.0/bin/node /Users/erichua/.nvm/versions/node/v4.3.0/bin/yarn install
+  /Users/erichua/.nvm/versions/node/v4.3.0/bin/node /Users/erichua/.nvm/versions/node/v4.3.0/bin/yarn
 
 PATH: 
   /Users/erichua/.nvm/versions/node/v4.3.0/bin:/Applications/AndroidSdkForAS/platform-tools/:/Applications/AndroidSdkForAS/tools/:/Users/erichua/.rvm/gems/ruby-2.1.0/bin:/Users/erichua/.rvm/gems/ruby-2.1.0@global/bin:/Users/erichua/.rvm/rubies/ruby-2.1.0/bin:/Applications/gradle-1.12/bin:/usr/local/Cellar/ant/1.9.3/bin:/Users/erichua/Documents/workspace/cocos2d-x-3.0rc0/tools/cocos2d-console/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/erichua/bin:/Users/erichua/bin/dex2jar-0.0.9.15/:/Users/erichua/bin/apktool1.5.2/:/Users/erichua/bin/apktool-install-macosx-r05-ibot/:/usr/local/bin:/Users/erichua/anaconda/bin:/Users/erichua/Documents/program/adt-bundle-mac-x86_64-20130729/sdk/tools:/Applications/android-ndk-r9c:/opt/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/erichua/Documents/program/adt-bundle-mac-x86_64-20130729/sdk/platform-tools:/Users/erichua/.rvm/bin:/Users/erichua/.vimpkg/bin:/usr/local/opt/fzf/bin
@@ -24,14 +24,6 @@ npm manifest:
       "babel-core": "6.17.0",
       "babel-jest": "16.0.0",
       "babel-loader": "6.2.5",
-      "eslint-config-prettier": "^2.3.0",
-      "eslint-plugin-flowtype": "^2.35.0",
-      "eslint-plugin-import": "^2.7.0",
-      "prettier": "^1.5.3",
-      "prettier-eslint": "^6.4.2",
-      "eslint-plugin-jsx-a11y": "^6.0.2",
-      "eslint-plugin-prettier": "^2.1.2",
-      "eslint-plugin-react": "^7.1.0",
       "babel-plugin-flow-react-proptypes": "grabbou/babel-plugin-flow-react-proptypes#release",
       "babel-preset-react-app": "^1.0.0",
       "case-sensitive-paths-webpack-plugin": "1.1.4",
@@ -43,7 +35,6 @@ npm manifest:
       "dotenv": "2.0.0",
       "eslint": "^3.19.0",
       "eslint-loader": "^1.7.1",
-      "eslint-plugin-flowtype": "^2.35.1",
       "extract-text-webpack-plugin": "1.0.1",
       "file-loader": "0.9.0",
       "filesize": "3.3.0",
