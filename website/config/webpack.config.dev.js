@@ -81,9 +81,9 @@ module.exports = {
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: ['.js', '.json', '.jsx', '.web.js', ''],
-    alias: {
-      'react-navigation': path.resolve(__dirname, '../../'),
-    },
+    // alias: {
+    //   'react-navigation': path.resolve(__dirname, '../../'),
+    // },
   },
   // Keep this because of the fallback setting above ^^
   resolveLoader: {

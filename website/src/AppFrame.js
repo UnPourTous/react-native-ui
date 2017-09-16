@@ -20,14 +20,6 @@ const NavigationLinks = ({ navigation, className, reverse }) => {
         </Link>
       );
     }),
-
-    <a
-      href="https://exp.host/@react-navigation/NavigationPlayground"
-      key="demo"
-    >
-      Demo
-    </a>,
-
     <a href="https://github.com/react-community/react-navigation" key="github">
       GitHub
     </a>,
@@ -77,7 +69,7 @@ class AppFrame extends React.Component {
                 role="presentation"
                 className="logo"
               />
-              <h1 className="pt-navbar-heading">React Navigation</h1>
+              <h1 className="pt-navbar-heading">React Native UI</h1>
             </Link>
 
             <NavigationLinks navigation={navigation} className="navbuttons" />
