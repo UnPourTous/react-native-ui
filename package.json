@@ -6,11 +6,11 @@
   "module": "lib/react-navigation.web.js",
   "webpack": "lib/react-navigation.web.js",
   "repository": {
-    "url": "git@github.com:react-community/react-navigation.git",
+    "url": "https://github.com/UnPourTous/react-native-ui.git",
     "type": "git"
   },
-  "author": "Adam Miskiewicz <adam@sk3vy.com>",
-  "license": "BSD-2-Clause",
+  "author": "UnPourTous<huatingzl@@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib/ lib-rn/",
     "build": "npm run build-docs && npm run build-web && npm run build-rn && npm run build-dot-flow",
