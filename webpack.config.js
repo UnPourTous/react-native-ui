@@ -1,22 +1,21 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-const config = {
+const webConfig = {
   entry: {
-    main: __dirname + '/lib/index.js',
+    main: __dirname + '/lib/index.js'
   },
   output: {
-    filename: 'index.js',
-    path: __dirname + '/dist',
+    filename: 'index.web.js',
+    path: __dirname + '/website/public',
     libraryTarget: 'umd'
   },
   module: {
-    rules: [
-      {test: /\.js$/, use: 'babel-loader'}
-    ]
+    rules: [{ 
+      test: /\.js$/, 
+      use: 'babel-loader'
+    }]
   },
-  plugins: [
-    new UglifyJSPlugin()
-  ],
+  plugins: [new UglifyJSPlugin()],
   resolve: {
     alias: {
       'react-native': 'react-native-web'
@@ -24,5 +23,19 @@ const config = {
     extensions: ['.js']
   }
 }
-module.exports = config
 
+const rnConfig = {
+  entry: {
+    main: __dirname + '/src/index.js',
+  },
+  output: {
+    filename: 'index.rn.js',
+    path: __dirname + '/lib',
+    libraryTarget: 'umd'
+  },
+  module: {
+    rules: [{ test: /\.js$/, use: 'babel-loader' }]
+  },
+  plugins: [new UglifyJSPlugin()]
+}
+module.exports = [webConfig]

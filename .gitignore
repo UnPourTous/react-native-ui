@@ -7,9 +7,7 @@ jsconfig.json
 
 # NodeJS
 npm-debug.log
-node_modules
-lib-rn
-lib
+node_modules/
 yarn-error.log
 
 # OS X
@@ -20,3 +18,7 @@ yarn-error.log
 
 # Jest
 coverage
+
+
+example/node_modules/
+website/node_modules/
