@@ -2,11 +2,11 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const config = {
   entry: {
-    main: __dirname + '/lib/index.js',
+    main: __dirname + '/src/index.js',
   },
   output: {
     filename: 'index.js',
-    path: __dirname + '/dist',
+    path: __dirname + '/lib-web',
     libraryTarget: 'umd'
   },
   module: {
