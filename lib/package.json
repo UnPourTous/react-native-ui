@@ -1,0 +1,16 @@
+{
+  "name": "@unpourtous/react-native-ui",
+  "version": "1.0.0",
+  "description": "An extendable react native libraryw",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "ui-library",
+    "custom-theme"
+  ],
+  "author": "unpourtous",
+  "license": "MIT"
+}
