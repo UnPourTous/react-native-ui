@@ -10,10 +10,12 @@ const webConfig = {
     libraryTarget: 'umd'
   },
   module: {
-    rules: [{ 
-      test: /\.js$/, 
-      use: 'babel-loader'
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      }
+    ]
   },
   plugins: [new UglifyJSPlugin()],
   resolve: {
@@ -24,18 +26,4 @@ const webConfig = {
   }
 }
 
-const rnConfig = {
-  entry: {
-    main: __dirname + '/src/index.js',
-  },
-  output: {
-    filename: 'index.rn.js',
-    path: __dirname + '/lib',
-    libraryTarget: 'umd'
-  },
-  module: {
-    rules: [{ test: /\.js$/, use: 'babel-loader' }]
-  },
-  plugins: [new UglifyJSPlugin()]
-}
 module.exports = [webConfig]
