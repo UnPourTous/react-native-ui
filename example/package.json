@@ -17,7 +17,10 @@
     "preset": "react-native"
   },
   "devDependencies": {
-    "@storybook/react-native": "^3.2.5",
-    "react-dom": "16.0.0-alpha.6"
+    "@storybook/react-native": "^3.2.12",
+    "react-dom": "16.0.0-alpha.6",
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12",
+    "prop-types": "^15.6.0"
   }
 }
