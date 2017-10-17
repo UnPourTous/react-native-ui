@@ -19,6 +19,9 @@ cd website/react-native-web-player && git submodule init && git submodule update
 
 ## Run website
 ``` shell 
+# build library web version
+gulp build:web
+
 cd website
 
 # build react native web player 
