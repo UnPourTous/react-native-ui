@@ -1,3 +1,3 @@
 [submodule "website/react-native-web-player"]
 	path = website/react-native-web-player
-	url = https://github.com/dabbott/react-native-web-player
+	url = https://github.com/erichua/react-native-web-player
