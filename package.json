@@ -30,7 +30,7 @@
     "format": "eslint --fix .",
     "flow": "flow",
     "flow-check": "flow check --show-all-errors",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build && gulp build:web"
   },
   "files": [
     "lib",

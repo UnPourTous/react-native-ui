@@ -2,7 +2,6 @@ const gulp = require('gulp')
 const chalk = require('chalk')
 const shell = require('gulp-shell')
 const execSync = require('child_process').execSync;
-const libPackageInfo = require('./lib/package.json')
 const envVersion = require('./package.json').envVersion
 const compare = require('node-version-compare');
 
@@ -46,14 +45,6 @@ gulp.task('check:git', () => {
     process.exit()
   }
 })
-
-gulp.task(
-  'dev:syncLib',
-  shell.task(['rm -rf node_modules/' + libPackageInfo.name, 'yarn '], {
-    cwd: './example',
-    ignoreErrors: true
-  })
-)
 
 gulp.task(
   'run:storybook',
