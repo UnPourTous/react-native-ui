@@ -113,3 +113,5 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('App', () => App)
 ```
+## Demos
+![image](https://user-images.githubusercontent.com/1309744/31782049-7b756dbc-b4bf-11e7-9835-a42bb747d7cf.png)
