@@ -1,0 +1,14 @@
+{
+  "name": "@unpourtous/react-native-ui",
+  "version": "1.0.0",
+  "description": "react-native-ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ercihua23",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.merge": "^4.6.0"
+  }
+}

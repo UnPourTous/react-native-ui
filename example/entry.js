@@ -8,24 +8,47 @@ import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
 } from 'react-native'
+import {
+  Button,
+  createTheme,
+  ThemeProvider,
+  DarkTheme,
+  LightTheme
+} from '@unpourtous/react-native-ui'
+import CustomTheme from './CustomTheme'
 
 export default class example extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <ThemeProvider theme={createTheme(DarkTheme)}>
+          <Button
+            style={{marginTop: 10}}
+            title={'Button(DarkTheme)'}
+            onPress={() => {
+              console.log('onPress')
+            }} />
+        </ThemeProvider>
+
+        <ThemeProvider theme={createTheme(LightTheme)}>
+          <Button
+            style={{marginTop: 10}}
+            title={'Button(LightTheme)'}
+            onPress={() => {
+              console.log('onPress')
+            }} />
+        </ThemeProvider>
+
+        <ThemeProvider theme={createTheme(CustomTheme)}>
+          <Button
+            style={{marginTop: 10}}
+            title={'Button(CustomTheme)'}
+            onPress={() => {
+              console.log('onPress')
+            }} />
+        </ThemeProvider>
       </View>
     )
   }
@@ -36,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#EEA'
   },
   welcome: {
     fontSize: 20,

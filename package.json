@@ -1,16 +1,14 @@
 {
-  "name": "@unpourtous/react-native-ui",
+  "name": "@unpourtous/react-native-ui-wrapper",
   "version": "0.0.0-beta.12",
   "description": "React Native UI",
-  "main": "lib/index.js",
-  "module": "lib/react-navigation.web.js",
-  "webpack": "lib/react-navigation.web.js",
+  "main": "src/index.js",
   "repository": {
-    "url": "git@github.com:react-community/react-navigation.git",
+    "url": "git+https://github.com/UnPourTous/react-native-ui.git",
     "type": "git"
   },
-  "author": "Adam Miskiewicz <adam@sk3vy.com>",
-  "license": "BSD-2-Clause",
+  "author": "erichua23 <huatingzl@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib/ lib-rn/",
     "build": "npm run build-docs && npm run build-web && npm run build-rn && npm run build-dot-flow",
@@ -114,5 +112,8 @@
     "git": {
       "min": "2.9.0"
     }
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
