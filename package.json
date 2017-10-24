@@ -21,7 +21,7 @@
     "start": "npm run run-playground-ios",
     "run-playground-ios": "cd examples/NavigationPlayground && npm run ios",
     "run-playground-android": "cd examples/NavigationPlayground && npm run android",
-    "test": "npm run website",
+    "test": "echo \"test TODO\"",
     "codecov": "codecov",
     "jest": "jest",
     "lint": "eslint .",
