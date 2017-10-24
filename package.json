@@ -29,7 +29,7 @@
     "flow": "flow",
     "flow-check": "flow check --show-all-errors",
     "prepublish": "npm run clean && npm run build && gulp build:web && git submodule init && git submodule update && cd website && yarn && cd react-native-web-player && yarn && cd ../../ ",
-    "website": "cd website && yarn run start",
+    "website": "cd website && yarn run start"
   },
   "files": [
     "lib",
