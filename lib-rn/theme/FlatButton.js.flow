@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
+import React, {Component, PropTypes} from 'react'
 
 class FlatButton extends Component {
   static propTypes = {

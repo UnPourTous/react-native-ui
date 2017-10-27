@@ -23,3 +23,4 @@ coverage
 example/node_modules/
 website/node_modules/
 website/public/web-player/
+website/public/index.web.js

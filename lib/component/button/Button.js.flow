@@ -26,8 +26,8 @@ class Button extends Component {
         borderRadius,
         textColor,
         backgroundColor
-      }
-    } = this.context.theme
+      } = {}
+    } = this.context.theme || {}
 
     const {
       title,
