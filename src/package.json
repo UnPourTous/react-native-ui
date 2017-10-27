@@ -9,6 +9,7 @@
   "author": "ercihua23",
   "license": "MIT",
   "dependencies": {
-    "lodash.merge": "^4.6.0"
+    "lodash.merge": "^4.6.0",
+    "prop-types": "^15.6.0"
   }
 }
