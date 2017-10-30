@@ -7,8 +7,6 @@ exports[`renders correctly 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -22,15 +20,14 @@ exports[`renders correctly 1`] = `
     }
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
       Array [
         Object {
           "alignItems": "center",
-          "backgroundColor": undefined,
-          "borderRadius": undefined,
+          "backgroundColor": "black",
+          "borderRadius": 2,
           "height": 50,
           "justifyContent": "center",
           "paddingLeft": 50,
@@ -43,11 +40,10 @@ exports[`renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
-          "color": undefined,
+          "color": "white",
         }
       }
     >

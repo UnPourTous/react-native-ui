@@ -8,13 +8,13 @@ import { themeble } from '../../theme'
 
 class Button extends Component {
   static propsType = {
-    title: PropTypes.string.isRequired,
+    // title: PropTypes.string.isRequired,
     style: View.propTypes.style
   }
 
-  // static defaultProps = {
-  //   backgroundColor: '#20a0ff'
-  // }
+  static defaultProps = {
+    theme: '#20a0ff'
+  }
 
   static contextTypes = {
     theme: PropTypes.object.isRequired
