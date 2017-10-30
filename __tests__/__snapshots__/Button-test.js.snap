@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Button renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -51,4 +51,18 @@ exports[`renders correctly 1`] = `
     </Text>
   </View>
 </View>
+`;
+
+exports[`FlatButton renders correctly 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "black",
+      "borderRadius": 2,
+      "color": "white",
+    }
+  }
+>
+  Test Button
+</button>
 `;

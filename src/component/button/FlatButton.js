@@ -1,5 +1,6 @@
 import React, {Component } from 'react'
 import PropTypes from 'prop-types'
+import { themeble } from '../../theme'
 
 class FlatButton extends Component {
   static propTypes = {
@@ -27,4 +28,4 @@ class FlatButton extends Component {
   }
 }
 
-export default FlatButton
+export default themeble()(FlatButton)
