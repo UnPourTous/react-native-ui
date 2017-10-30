@@ -55,13 +55,13 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-define": "^1.3.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.10",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-react-native": "^2.1.0",
+    "babel-preset-react-native": "^4.0.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "babel-preset-react-native-syntax": "^1.0.0",
     "babel-preset-stage-0": "^6.24.1",
@@ -89,7 +89,7 @@
     "prettier": "^1.5.3",
     "prettier-eslint": "^6.4.2",
     "react": "16.0.0-alpha.12",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.0.0-alpha.12",
     "react-native": "^0.45.1",
     "react-native-vector-icons": "^4.2.0",
     "react-test-renderer": "16.0.0-alpha.12",
@@ -105,7 +105,8 @@
       "node_modules/(?!react-native|tcomb-form-native|react-native-localization|@exponent/react-native-action-sheet|@exponent/ex-navigation|@exponent/react-native-touchable-native-feedback-safe|rnrf-relay-renderer|react-clone-referenced-element|react-native-looped-carousel|rn-splash-screen)"
     ],
     "transform": {
-      "^.+\\.(js)$": "<rootDir>/node_modules/webpack-babel-jest"
+      "^.+\\.(js)$": "<rootDir>/node_modules/webpack-babel-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     }
   },
   "envVersion": {

@@ -1,10 +1,7 @@
 {
   "presets": ["es2015", "stage-1", "react"],
   "plugins": [
-    "transform-flow-strip-types",
-    ["transform-define", {
-      "__DEV__": false
-    }]
+    "transform-flow-strip-types"
   ],
   "env": {
     "start": {
