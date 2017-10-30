@@ -12,13 +12,13 @@ class ThemeProvider extends Component {
     theme: PropTypes.object.isRequired
   }
 
-  getChildContext() {
+  getChildContext () {
     return {
       theme: this.props.theme || createTheme()
     }
   }
 
-  render() {
+  render () {
     return this.props.children
   }
 }

@@ -1,15 +1,16 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import {
   View,
   TouchableOpacity,
   Text
 } from 'react-native'
+import PropTypes from 'prop-types'
 import { themeble } from '../../theme'
 
 class Button extends Component {
   static propsType = {
-    // title: PropTypes.string.isRequired,
-    style: View.propTypes.style
+    title: PropTypes.string.isRequired,
+    style: PropTypes.style
   }
 
   static defaultProps = {
