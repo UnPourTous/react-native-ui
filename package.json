@@ -96,19 +96,6 @@
     "standard": "^10.0.3",
     "webpack": "^3.7.1"
   },
-  "jest": {
-    "notify": true,
-    "verbose": true,
-    "preset": "react-native",
-    "testRegex": "./__tests__/.*\\-test\\.js$",
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|tcomb-form-native|react-native-localization|@exponent/react-native-action-sheet|@exponent/ex-navigation|@exponent/react-native-touchable-native-feedback-safe|rnrf-relay-renderer|react-clone-referenced-element|react-native-looped-carousel|rn-splash-screen)"
-    ],
-    "transform": {
-      "^.+\\.(js)$": "<rootDir>/node_modules/webpack-babel-jest",
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    }
-  },
   "envVersion": {
     "nodejs": {
       "min": "4.0.0"
