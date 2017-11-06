@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import {
   View,
-  TouchableOpacity,
-  Text
+  Text,
+  StyleSheet
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { themeble } from '../../theme'
+import Touchable from '../base/touchable'
+import merge from 'lodash.merge'
 
-class Button extends Component {
+export default themeble()(class extends Component {
   static propsType = {
-    title: PropTypes.string.isRequired,
-    style: PropTypes.style
-  }
+    children: PropTypes.oneOf([PropTypes.string, PropTypes.element]).isRequired,
+    disabled: PropTypes.bool,
 
-  static defaultProps = {
-    theme: '#20a0ff'
+    style: PropTypes.style,
+
+    onPress: PropTypes.bool
   }
 
   static contextTypes = {
@@ -32,11 +34,13 @@ class Button extends Component {
 
     const {
       title,
-      onPress
-    } = this.props
+      onPress,
+      textStyle
+    } = merge(this.props, this.context.theme, {})
 
     return (
-      <TouchableOpacity
+      <Touchable
+        pressMode={Touchable.PressMode.opacity}
         onPress={onPress}>
         <View
           style={[{
@@ -48,12 +52,11 @@ class Button extends Component {
             alignItems: 'center',
             justifyContent: 'center'
           }, this.props.style]}>
-          <Text style={{
+          <Text style={[textStyle, {
             color: textColor
-          }}>{title}</Text>
+          }]}>{title}</Text>
         </View>
-      </TouchableOpacity>
+      </Touchable>
     )
   }
-}
-export default themeble()(Button)
+})

@@ -42,27 +42,16 @@ exports[`Button renders correctly 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
-        Object {
-          "color": "white",
-        }
+        Array [
+          undefined,
+          Object {
+            "color": "white",
+          },
+        ]
       }
     >
       Test Button
     </Text>
   </View>
 </View>
-`;
-
-exports[`FlatButton renders correctly 1`] = `
-<button
-  style={
-    Object {
-      "backgroundColor": "black",
-      "borderRadius": 2,
-      "color": "white",
-    }
-  }
->
-  Test Button
-</button>
 `;
