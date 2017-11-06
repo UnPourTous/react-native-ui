@@ -6,7 +6,10 @@ exports[`Button renders correctly 1`] = `
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}
+  collapsable={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -20,6 +23,7 @@ exports[`Button renders correctly 1`] = `
     }
   }
   testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -40,6 +44,7 @@ exports[`Button renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [

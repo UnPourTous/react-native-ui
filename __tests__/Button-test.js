@@ -6,7 +6,6 @@ import {
   ThemeProvider,
   createTheme,
   DarkTheme
-
 } from '../src'
 import renderer from 'react-test-renderer'
 test('Button renders correctly', () => {

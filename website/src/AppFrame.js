@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import Link from './Link';
-import Footer from './Footer';
-import { addNavigationHelpers } from 'react-navigation';
+import Link from './Link'
+import Footer from './Footer'
+import { addNavigationHelpers } from 'react-navigation'
 
 const NavigationLinks = ({ navigation, className, reverse }) => {
   let links = [
     ...navigation.state.routes.map((route, i) => {
       if (route.routeName === 'Home' || route.routeName === 'NotFound') {
-        return null;
+        return null
       }
       return (
         <Link
@@ -18,61 +18,61 @@ const NavigationLinks = ({ navigation, className, reverse }) => {
         >
           {route.routeName}
         </Link>
-      );
+      )
     }),
-    <a href="https://github.com/react-community/react-navigation" key="github">
+    <a href='https://github.com/react-community/react-navigation' key='github'>
       GitHub
-    </a>,
-  ];
+    </a>
+  ]
   if (reverse) {
-    links = links.reverse();
+    links = links.reverse()
   }
   return (
     <div className={className}>
       {links}
     </div>
-  );
-};
+  )
+}
 
 class AppFrame extends React.Component {
   state = { isMobileMenuOpen: false };
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps (props) {
     if (this.props.navigation.state !== props.navigation.state) {
-      this.setState({ isMobileMenuOpen: false });
-      window.scrollTo(0, 0);
+      this.setState({ isMobileMenuOpen: false })
+      window.scrollTo(0, 0)
     }
   }
-  render() {
-    const { navigation, router } = this.props;
-    const { isMobileMenuOpen } = this.state;
+  render () {
+    const { navigation, router } = this.props
+    const { isMobileMenuOpen } = this.state
     const childNavigation = addNavigationHelpers({
       ...navigation,
-      state: navigation.state.routes[navigation.state.index],
-    });
-    const { state } = navigation;
+      state: navigation.state.routes[navigation.state.index]
+    })
+    const { state } = navigation
     const ScreenView = router.getComponentForRouteName(
       state.routes[state.index].routeName
-    );
-    const { routes, index } = state;
-    const route = routes[index];
-    const hasChildNavigation = !!route.routes;
+    )
+    const { routes, index } = state
+    const route = routes[index]
+    const hasChildNavigation = !!route.routes
     return (
       <div className={`main-app ${isMobileMenuOpen ? 'mobileMenuActive' : ''}`}>
-        <nav className="pt-navbar" id="navbar">
-          <div className="inner-navbar">
+        <nav className='pt-navbar' id='navbar'>
+          <div className='inner-navbar'>
             <Link
-              className="pt-navbar-group pt-align-left project-title"
-              to="Home"
+              className='pt-navbar-group pt-align-left project-title'
+              to='Home'
             >
               <img
-                src="/assets/react-nav-logo.svg"
-                role="presentation"
-                className="logo"
+                src='/assets/react-nav-logo.svg'
+                role='presentation'
+                className='logo'
               />
-              <h1 className="pt-navbar-heading">React Native UI</h1>
+              <h1 className='pt-navbar-heading'>React Native UI</h1>
             </Link>
 
-            <NavigationLinks navigation={navigation} className="navbuttons" />
+            <NavigationLinks navigation={navigation} className='navbuttons' />
 
             {hasChildNavigation &&
               <span
@@ -81,9 +81,9 @@ class AppFrame extends React.Component {
                   : ''}`}
                 onClick={() => {
                   this.setState(s => ({
-                    isMobileMenuOpen: !s.isMobileMenuOpen,
-                  }));
-                  window.scrollTo(0, 0);
+                    isMobileMenuOpen: !s.isMobileMenuOpen
+                  }))
+                  window.scrollTo(0, 0)
                 }}
               />}
           </div>
@@ -91,7 +91,7 @@ class AppFrame extends React.Component {
 
         <NavigationLinks
           navigation={navigation}
-          className="mobile-navbuttons"
+          className='mobile-navbuttons'
           reverse
         />
 
@@ -99,8 +99,8 @@ class AppFrame extends React.Component {
 
         <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default AppFrame;
+export default AppFrame

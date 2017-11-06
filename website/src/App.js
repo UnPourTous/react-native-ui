@@ -2,20 +2,20 @@
  * @flow
  */
 
-import React from 'react';
+import React from 'react'
 
-import AppFrame from './AppFrame';
+import AppFrame from './AppFrame'
 // import HomePage from './HomePage';
-import PageWithSidebar from './PageWithSidebar';
-import MDPage from './MDPage';
+import PageWithSidebar from './PageWithSidebar'
+import MDPage from './MDPage'
 
 import {
   TabRouter,
   addNavigationHelpers,
-  createNavigator,
-} from 'react-navigation';
+  createNavigator
+} from 'react-navigation'
 
-import type { NavigationScreenComponent } from 'react-navigation';
+import type { NavigationScreenComponent } from 'react-navigation'
 
 type ScreenOptions = {
   linkName: string,
@@ -24,17 +24,17 @@ type ScreenOptions = {
 };
 
 const NavView = ({ navigation, router }: { navigation: any, router: any }) => {
-  const { state } = navigation;
-  const Component = router.getComponentForState(state);
+  const { state } = navigation
+  const Component = router.getComponentForState(state)
   return (
     <Component
       navigation={addNavigationHelpers({
         ...navigation,
-        state: state.routes[state.index],
+        state: state.routes[state.index]
       })}
     />
-  );
-};
+  )
+}
 
 type DocPageConfig = {
   doc: string,
@@ -46,17 +46,17 @@ const createDocPage = (
   config: DocPageConfig
 ): (() => NavigationScreenComponent<*, ScreenOptions>) => {
   const Page: NavigationScreenComponent<*, ScreenOptions> = ({
-    navigation,
+    navigation
   }: {
     navigation: any,
-  }) => <MDPage docPath={config.doc} navigation={navigation} />;
+  }) => <MDPage docPath={config.doc} navigation={navigation} />
   Page.navigationOptions = {
     doc: config.doc,
     title: config.title,
-    linkName: config.linkName,
-  };
-  return Page;
-};
+    linkName: config.linkName
+  }
+  return Page
+}
 
 const GuideDocs = createNavigator(
   TabRouter({
@@ -64,17 +64,17 @@ const GuideDocs = createNavigator(
       screen: createDocPage({
         doc: 'guides/Guide-Intro',
         title: 'Hello React-Native-UI', // browser title
-        linkName: 'Hello React-Native-UI',
+        linkName: 'Hello React-Native-UI'
       }),
-      path: '',
-    },
+      path: ''
+    }
   })
-)(NavView);
+)(NavView)
 
 GuideDocs.navigationOptions = {
   linkName: 'Getting Started',
-  icon: 'pt-icon-flows',
-};
+  icon: 'pt-icon-flows'
+}
 
 const ButtonDocs = createNavigator(
   TabRouter({
@@ -82,25 +82,25 @@ const ButtonDocs = createNavigator(
       screen: createDocPage({
         doc: 'api/button/Button1',
         title: 'Button1', // browser title
-        linkName: 'Button1',
+        linkName: 'Button1'
       }),
-      path: 'button1',
+      path: 'button1'
     },
     Button2: {
       screen: createDocPage({
         doc: 'api/button/Button2',
         title: 'Button2', // browser title
-        linkName: 'Button2',
+        linkName: 'Button2'
       }),
-      path: 'button2',
-    },
+      path: 'button2'
+    }
   })
-)(NavView);
+)(NavView)
 
 ButtonDocs.navigationOptions = {
   linkName: 'Button',
-  icon: 'pt-icon-flows',
-};
+  icon: 'pt-icon-flows'
+}
 
 const PopupDocs = createNavigator(
   TabRouter({
@@ -108,78 +108,78 @@ const PopupDocs = createNavigator(
       screen: createDocPage({
         doc: 'api/popup/Dialog',
         title: 'Button', // browser title
-        linkName: 'Button',
+        linkName: 'Button'
       }),
-      path: 'button',
+      path: 'button'
     },
     Toast: {
       screen: createDocPage({
         doc: 'api/popup/Toast',
         title: 'Toast', // browser title
-        linkName: 'Toast',
+        linkName: 'Toast'
       }),
-      path: 'toast',
+      path: 'toast'
     },
     ActionSheet: {
       screen: createDocPage({
         doc: 'api/popup/ActionSheet',
         title: 'ActionSheet', // browser title
-        linkName: 'ActionSheet',
+        linkName: 'ActionSheet'
       }),
-      path: 'actions-sheet',
+      path: 'actions-sheet'
     },
     Custom: {
       screen: createDocPage({
         doc: 'api/popup/Custom',
         title: 'Custom', // browser title
-        linkName: 'Custom',
+        linkName: 'Custom'
       }),
-      path: 'custom',
+      path: 'custom'
     },
     Animation: {
       screen: createDocPage({
         doc: 'api/popup/Animation',
         title: 'Animation', // browser title
-        linkName: 'Animation',
+        linkName: 'Animation'
       }),
-      path: 'animation',
-    },
+      path: 'animation'
+    }
   })
-)(NavView);
+)(NavView)
 
 PopupDocs.navigationOptions = {
   linkName: 'Popup',
-  icon: 'pt-icon-briefcase',
-};
+  icon: 'pt-icon-briefcase'
+}
 
 const DocsPage = createNavigator(
   TabRouter({
     GuideDocs: {
       screen: GuideDocs,
-      path: 'intro',
+      path: 'intro'
     },
     ButtonTab: {
       screen: ButtonDocs,
-      path: 'button',
+      path: 'button'
     },
     PopupTab: {
       screen: PopupDocs,
-      path: 'popup',
-    },
+      path: 'popup'
+    }
   })
-)(PageWithSidebar);
+)(PageWithSidebar)
 DocsPage.navigationOptions = ({
-  navigationOptions,
+  navigationOptions
 }: {
   navigationOptions: any,
 }) => ({
-  title: `${navigationOptions.title} | React Navigation`,
-});
+  title: `${navigationOptions.title} | React Navigation`
+})
 
 const NotFoundError = () =>
-  <div className="errorScreen">
+  <div className='errorScreen'>
     <h1>Page not found</h1>
-  </div>;
+  </div>
 
 const App = createNavigator(
   TabRouter({
@@ -189,7 +189,7 @@ const App = createNavigator(
     // },
     Docs: {
       screen: DocsPage,
-      path: 'docs',
+      path: 'docs'
     },
     // Blog: {
     //   screen: BlogPage,
@@ -198,10 +198,10 @@ const App = createNavigator(
     NotFound: {
       screen: NotFoundError,
       navigationOptions: {
-        title: 'Page Not Found | React Navigation',
-      },
-    },
+        title: 'Page Not Found | React Navigation'
+      }
+    }
   })
-)(AppFrame);
+)(AppFrame)
 
-export default App;
+export default App

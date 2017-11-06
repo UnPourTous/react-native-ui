@@ -2,7 +2,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const webConfig = {
   entry: {
-    main: __dirname + '/lib/index.js'
+    main: __dirname + '/src/index.js'
   },
   output: {
     filename: 'index.web.js',
