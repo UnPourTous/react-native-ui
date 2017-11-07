@@ -146,21 +146,12 @@ gulp.task('build:webplayer', () => {
 /**
  * Build documents website
  */
-gulp.task('build:website', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
+gulp.task('build', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
   execSync('cd website; npm run build; cd ..;')
 })
 
-// gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {
-//   execSync('./node_modules/webpack/bin/webpack.js')
-// })
-
-/**
- * Build All
- */
-gulp.task('build', ['build:lib', 'build:website'])
-
-gulp.task('run:website', ['build'], () => {
-  execSync('cd website; npm run start')
+gulp.task('deploy:website', ['build'], () => {
+  execSync('scp -r website/build/public/* erichua@react-native-ui.unpourtous.io:/var/website/react-native-ui.unpourtous.io/')
 })
 
 /**
