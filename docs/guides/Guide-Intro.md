@@ -1,4 +1,3 @@
-# Hello @UnPourTous/react-native-ui
+# Hello React Native UI
 
-介绍页面
-
+A easy used react native ui library.

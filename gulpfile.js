@@ -147,7 +147,7 @@ gulp.task('build:webplayer', () => {
  * Build documents website
  */
 gulp.task('build:website', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
-  execSync('cd website; npm run build; cp -rf build/public/* ../docs/ && cd ..;')
+  execSync('cd website; npm run build; cd ..;')
 })
 
 // gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {

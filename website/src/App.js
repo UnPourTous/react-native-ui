@@ -80,19 +80,19 @@ const ButtonDocs = createNavigator(
   TabRouter({
     Button: {
       screen: createDocPage({
-        doc: 'api/button/Button1',
-        title: 'Button1', // browser title
-        linkName: 'Button1'
+        doc: 'api/button/Button',
+        title: 'Basic Button', // browser title
+        linkName: 'Basic Button'
       }),
-      path: 'button1'
+      path: 'button'
     },
     Button2: {
       screen: createDocPage({
-        doc: 'api/button/Button2',
-        title: 'Button2', // browser title
-        linkName: 'Button2'
+        doc: 'api/button/FlatButton',
+        title: 'FlatButton', // browser title
+        linkName: 'FlatButton'
       }),
-      path: 'button2'
+      path: 'FlatButton'
     }
   })
 )(NavView)

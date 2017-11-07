@@ -87,15 +87,15 @@ recursive(paths.appBuild, (err, fileNames) => {
     cwd: paths.appRoot
   })
 
-  fs.readdirSync(paths.appBuildLib).forEach(module => {
-    const modulePath = path.join(paths.appBuildLib, module)
-    let moduleData = fs.readFileSync(modulePath, { encoding: 'utf8' })
-    // This is a dangerous shameful hack but it allows the website source to use a standard-looking import:
-    moduleData = moduleData
-      .split("require('react-navigation'")
-      .join("require('../react-navigation/react-navigation.web'")
-    fs.writeFileSync(modulePath, moduleData)
-  })
+  // fs.readdirSync(paths.appBuildLib).forEach(module => {
+  //   const modulePath = path.join(paths.appBuildLib, module)
+  //   let moduleData = fs.readFileSync(modulePath, { encoding: 'utf8' })
+  //   // This is a dangerous shameful hack but it allows the website source to use a standard-looking import:
+  //   moduleData = moduleData
+  //     .split("require('react-navigation'")
+  //     .join("require('../react-navigation/react-navigation.web'")
+  //   fs.writeFileSync(modulePath, moduleData)
+  // })
 
   const libPath = path.join(paths.appBuild, 'react-navigation')
   fs.mkdirSync(libPath)

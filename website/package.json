@@ -2,7 +2,7 @@
   "name": "ReactNativeUIWebsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.unpourtous.io/react-native-ui/",
+  "homepage": "http://react-native-ui.unpourtous.io/",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-cli": "^6.18.0",
