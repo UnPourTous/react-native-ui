@@ -102,10 +102,6 @@ recursive(paths.appBuild, (err, fileNames) => {
 
   fs.copySync(path.join(paths.libRoot, 'lib'), libPath)
 
-  // fs.writeFileSync(path.join(libPath, 'package.json'), JSON.stringify(Object.assign({}, navLibPackageJson, {
-  //   main: 'lib/react-navigation',
-  // }), null, 2));
-
   fs.writeFileSync(
     path.join(paths.appBuild, 'package.json'),
     JSON.stringify(
