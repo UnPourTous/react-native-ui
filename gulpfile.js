@@ -1,12 +1,15 @@
 const gulp = require('gulp')
 const chalk = require('chalk')
 const shell = require('gulp-shell')
-const execSync = require('child_process').execSync;
 const envVersion = require('./package.json').envVersion
 const compare = require('node-version-compare');
+const execSync = (cmd) => {
+  require('child_process').execSync(cmd, {stdio:[0,1,2]})
+}
+
 
 gulp.task('check:node', () => {
-  const checkCmdExisted = execSync(
+  const checkCmdExisted = require('child_process').execSync(
     'if ! [ -x "$(command -v node)" ]; then echo "0"; else echo "-1"; fi'
   )
   if (!checkCmdExisted.toString() === '-1') {
@@ -105,46 +108,62 @@ gulp.task(
   )
 )
 
-gulp.task('build:web', () => {
+/**
+ * Clean lib
+ */
+gulp.task('clean:lib', () => {
+  execSync('rm -rf lib')
+})
+
+/**
+ * Build core library
+ */
+gulp.task('build:lib', ['clean:lib'], () => {
+  execSync('mkdir lib && cp -R src/* lib/')
+})
+
+/**
+ * Build documents
+ */
+gulp.task('build:docs', () => {
+  execSync('node ./scripts/compile-docs.js')
+})
+
+/**
+ * Build react native web player
+ */
+gulp.task('build:webplayer', () => {
+  execSync('cd website/react-native-web-player; npm run build; cp -r dist ../public/web-player; cd ../../;')
+})
+
+/**
+ * Build documents website
+ */
+gulp.task('build:website', ['build:docs', 'build:webplayer'], () => {
   execSync('./node_modules/webpack/bin/webpack.js')
 })
 
-gulp.task('help', () => {
-  console.log(
-    '\n------------------- React Native Library Seed Project -------------------'
-  )
-  console.log(chalk.green('setup'), 'setup project init environment')
+gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {
+  execSync('./node_modules/webpack/bin/webpack.js')
+})
 
-  console.log('')
-  console.log(chalk.green('[run:storybook]'), 'start storybook packger server')
-  console.log(
-    chalk.green('[run:ios]'),
-    'start ios client, alias for `react-native run-ios` '
-  )
-  console.log(
-    chalk.green('[run:android]'),
-    'start android client, alias for `react-native run-android` '
-  )
+/**
+ * Build All
+ */
+gulp.task('build', ['build:lib', 'build:website'])
 
-  console.log('')
-  console.log(chalk.green('[dev:syncLib]'), 'reinstall lib for example')
+gulp.task('run:website', ['build'], () => {
+  execSync('cd website; npm run start')
+})
 
-  console.log('')
-  console.log(
-    chalk.green('[publish:major]'),
-    'publish as a major version to npm'
-  )
-  console.log(
-    chalk.green('[publish:minor]'),
-    'publish as a minor version to npm'
-  )
-  console.log(
-    chalk.green('[publish:patch]'),
-    'publish as a patch version to npm'
-  )
+gulp.task('run:website', () => {
+  execSync('cd website/react-native-web-player; npm run build; cp -r dist ../public/web-player; cd ../../;')
+})
 
-  console.log(
-    '------------------- React Native Library Seed Project -------------------\n'
-  )
-});
-gulp.task('default', ['help'])
+/**
+ * Build All
+ */
+gulp.task('test', () => {
+  execSync('npm test')
+})
+

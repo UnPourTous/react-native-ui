@@ -16,7 +16,7 @@ export default themeble()(class extends Component {
 
     style: PropTypes.style,
 
-    onPress: PropTypes.bool
+    onPress: PropTypes.func
   }
 
   static contextTypes = {
@@ -36,7 +36,7 @@ export default themeble()(class extends Component {
       title,
       onPress,
       textStyle
-    } = merge(this.props, this.context.theme, {})
+    } = merge({}, this.props, this.context.theme, {})
 
     return (
       <Touchable
@@ -45,7 +45,7 @@ export default themeble()(class extends Component {
         <View
           style={[{
             borderRadius,
-            height: 50,
+            height: 51,
             paddingLeft: 50,
             paddingRight: 50,
             backgroundColor,

@@ -15,8 +15,9 @@
     "build-docs": "node scripts/compile-docs",
     "test": "jest",
     "codecov": "codecov",
-    "build-all": "npm run clean && npm run build && gulp build:web && git submodule init && git submodule update && cd website && yarn && cd react-native-web-player && yarn && cd ../../ ",
-    "website": "cd website && yarn run start"
+    "build-all": "npm run clean && npm run build && gulp build:web ",
+    "website": "cd website && yarn run start",
+    "postinstall": "git submodule init && git submodule update && cd website && yarn && cd ../website && yarn && cd react-native-web-player && yarn && cd ../../ "
   },
   "files": [
     "lib",
