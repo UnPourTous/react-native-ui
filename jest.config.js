@@ -7,6 +7,7 @@ module.exports = {
   coverageDirectory: './__tests__/coverage/',
   coverageReporters: ["lcov", "text"],
   testRegex: "./__tests__/.*\\-test\\.js$",
+  modulePathIgnorePatterns: ["example/node_modules/", "website/"],
   transformIgnorePatterns: [
     "node_modules/(?!react-native|tcomb-form-native|react-native-localization|@exponent/react-native-action-sheet|@exponent/ex-navigation|@exponent/react-native-touchable-native-feedback-safe|rnrf-relay-renderer|react-clone-referenced-element|react-native-looped-carousel|rn-splash-screen)"
   ],
