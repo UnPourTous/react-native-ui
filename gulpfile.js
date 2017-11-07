@@ -119,7 +119,7 @@ gulp.task('clean:lib', () => {
  * Build core library
  */
 gulp.task('build:lib', ['clean:lib'], () => {
-  execSync('mkdir lib && cp -R src/* lib/')
+  execSync('cp -R src/* lib/')
 })
 
 /**
@@ -147,7 +147,7 @@ gulp.task('build:webplayer', () => {
  * Build documents website
  */
 gulp.task('build:website', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
-  execSync('cd website; npm run build; cp -rf build/* ../docs/ && cd ..;')
+  execSync('cd website; npm run build; cp -rf build/public/* ../docs/ && cd ..;')
 })
 
 // gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {
