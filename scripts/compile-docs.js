@@ -14,10 +14,10 @@ function crawl(location) {
     }
   });
 }
-crawl('docs');
+crawl('docs-source');
 
 var names = files.map(function(file) {
-  const nameWithExt = file.split('docs' + path.sep)[1];
+  const nameWithExt = file.split('docs-source' + path.sep)[1];
   const name = nameWithExt.split('.md')[0];
   return name;
 });
@@ -25,7 +25,7 @@ var names = files.map(function(file) {
 var mdData = {};
 
 names.map(function(name) {
-  mdData[name] = fs.readFileSync('docs' + path.sep + name + '.md', {
+  mdData[name] = fs.readFileSync('docs-source' + path.sep + name + '.md', {
     encoding: 'utf8',
   });
 });

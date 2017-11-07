@@ -112,7 +112,7 @@ gulp.task(
  * Clean lib
  */
 gulp.task('clean:lib', () => {
-  execSync('rm -rf lib')
+  execSync('rm -rf lib/*')
 })
 
 /**
@@ -120,6 +120,13 @@ gulp.task('clean:lib', () => {
  */
 gulp.task('build:lib', ['clean:lib'], () => {
   execSync('mkdir lib && cp -R src/* lib/')
+})
+
+/**
+ * Build core library
+ */
+gulp.task('build:lib-web', () => {
+  execSync('./node_modules/webpack/bin/webpack.js')
 })
 
 /**
@@ -139,13 +146,13 @@ gulp.task('build:webplayer', () => {
 /**
  * Build documents website
  */
-gulp.task('build:website', ['build:docs', 'build:webplayer'], () => {
-  execSync('./node_modules/webpack/bin/webpack.js')
+gulp.task('build:website', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
+  execSync('cd website; npm run build; cp -rf build/* ../docs/ && cd ..;')
 })
 
-gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {
-  execSync('./node_modules/webpack/bin/webpack.js')
-})
+// gulp.task('watch:website', ['build:docs', 'build:webplayer'], () => {
+//   execSync('./node_modules/webpack/bin/webpack.js')
+// })
 
 /**
  * Build All
@@ -154,10 +161,6 @@ gulp.task('build', ['build:lib', 'build:website'])
 
 gulp.task('run:website', ['build'], () => {
   execSync('cd website; npm run start')
-})
-
-gulp.task('run:website', () => {
-  execSync('cd website/react-native-web-player; npm run build; cp -r dist ../public/web-player; cd ../../;')
 })
 
 /**
