@@ -150,8 +150,8 @@ gulp.task('build', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer
   execSync('cd website; npm run build; cd ..;')
 })
 
-gulp.task('deploy:website', ['build'], () => {
-  execSync('scp -r website/build/public/* erichua@react-native-ui.unpourtous.io:/var/website/react-native-ui.unpourtous.io/')
+gulp.task('deploy:website', () => {
+  execSync('scp -r website/build/public/* unpourtous@react-native-ui.unpourtous.io:/var/website/react-native-ui.unpourtous.io/')
 })
 
 /**
