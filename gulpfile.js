@@ -50,11 +50,6 @@ gulp.task('check:git', () => {
 })
 
 gulp.task(
-  'run:storybook',
-  shell.task(['npm run storybook'], { cwd: './example' })
-)
-
-gulp.task(
   'run:android',
   shell.task(['react-native run-android'], { cwd: './example' })
 )
@@ -148,6 +143,10 @@ gulp.task('build:webplayer', () => {
  */
 gulp.task('build', ['build:lib', 'build:lib-web', 'build:docs', 'build:webplayer'], () => {
   execSync('cd website; npm run build; cd ..;')
+})
+
+gulp.task('run:website', () => {
+  execSync('cd website; npm run start; cd ..;')
 })
 
 gulp.task('deploy:website', () => {

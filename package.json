@@ -17,7 +17,7 @@
     "codecov": "codecov",
     "build-all": "npm run clean && npm run build && gulp build:web ",
     "website": "cd website && yarn run start",
-    "postinstall": "git submodule init && git submodule update && cd website && yarn && cd ../website && yarn && cd react-native-web-player && yarn && cd ../../ "
+    "postinstall": "git submodule init && git submodule update && cd website && yarn && cd ../website && yarn && cd react-native-web-player && yarn && cd ../../ && cd example && yarn && cd .."
   },
   "files": [
     "lib",
