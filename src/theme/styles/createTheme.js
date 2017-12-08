@@ -14,10 +14,22 @@ export default function createTheme (theme = {}, ...more) {
 
   const {borderRadius, palette, fontFamily} = noneUiTheme
   return merge({
-    flatButton: {
-      borderRadius: borderRadius,
-      textColor: palette.textColor,
-      backgroundColor: palette.primaryColor
+    button: {
+      primary: {
+        borderRadius: borderRadius,
+        textColor: palette.textColor,
+        backgroundColor: '#179B16'
+      },
+      default: {
+        borderRadius: borderRadius,
+        textColor: palette.textColor,
+        backgroundColor: '#F7F7F7'
+      },
+      warn: {
+        borderRadius: borderRadius,
+        textColor: palette.textColor,
+        backgroundColor: '#E64340'
+      }
     }
   }, noneUiTheme)
 }

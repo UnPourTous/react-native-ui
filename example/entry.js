@@ -25,6 +25,7 @@ export default class example extends Component {
       <View style={styles.container}>
         <ThemeProvider theme={createTheme(DarkTheme)}>
           <Button
+            type={Button.Types.primary}
             style={{marginTop: 10}}
             title={'Button(DarkTheme)'}
             onPress={() => {

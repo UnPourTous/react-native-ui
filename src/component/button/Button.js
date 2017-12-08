@@ -9,14 +9,20 @@ import { themeble } from '../../theme'
 import Touchable from '../base/touchable'
 import merge from 'lodash.merge'
 
-export default themeble()(class extends Component {
+export default themeble()(class Button extends Component {
+  static Types = {
+    primary: 'primary',
+    default: 'default',
+    warn: 'warn'
+  }
   static propsType = {
     children: PropTypes.oneOf([PropTypes.string, PropTypes.element]).isRequired,
     disabled: PropTypes.bool,
 
     style: PropTypes.style,
 
-    onPress: PropTypes.func
+    onPress: PropTypes.func,
+    type: PropTypes.oneOf(Object.keys(Button.Types))
   }
 
   static contextTypes = {
@@ -24,11 +30,15 @@ export default themeble()(class extends Component {
   }
 
   render () {
+    const {type = Button.Types.default} = this.props
+
     const {
-      flatButton: {
-        borderRadius,
-        textColor,
-        backgroundColor
+      button: {
+        [type]: {
+          borderRadius,
+          textColor,
+          backgroundColor
+        }
       } = {}
     } = this.context.theme || {}
 
@@ -51,12 +61,24 @@ export default themeble()(class extends Component {
             backgroundColor,
             alignItems: 'center',
             justifyContent: 'center'
-          }, this.props.style]}>
+          }, styles, this.props.style]}>
           <Text style={[textStyle, {
             color: textColor
           }]}>{title}</Text>
         </View>
       </Touchable>
     )
+  }
+})
+
+const styles = StyleSheet.create({
+  primary: {
+    backgroundColor: '#179B16'
+  },
+  default: {
+    backgroundColor: '#F7F7F7'
+  },
+  warn: {
+    backgroundColor: '#E64340'
   }
 })
